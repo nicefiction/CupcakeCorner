@@ -1,21 +1,29 @@
-//
-//  ContentView.swift
-//  CupcakeCorner
-//
-//  Created by Olivier Van hamme on 29/04/2021.
-//
+// MARK: ContentView.swift
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    
     var body: some View {
+        
         Text("Hello, world!")
             .padding()
     }
 }
 
+
+
+
+
+ // ///////////////
+//  MARK: PREVIEWS
+
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        ContentView()
+        
+        ContentView().previewDevice("iPhone 12 Pro")
     }
 }
