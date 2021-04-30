@@ -24,7 +24,14 @@ import SwiftUI
 
 struct Result: Codable {
     
-    var trackID: Int
+    /**
+     GOTCHA :
+     You have to be careful with your variable names in your data structs .
+     These are case sensitive
+     and the names must exactly match the names in the provided JSON .
+     https://www.hackingwithswift.com/forums/100-days-of-swiftui/day49-jsondecoder-not-working-on-ios-14/4016
+     */
+    var trackId: Int
     var trackName: String
     var collectionName: String
 }
@@ -54,7 +61,7 @@ struct URLSessionView: View {
         
         // List(results , id : \.trackID) { result in // PAUL HUDSON
         List {
-            ForEach(results , id : \.trackID) { (result: Result) in
+            ForEach(results , id : \.trackId) { (result: Result) in
                 VStack(alignment : .leading) {
                     Text(result.trackName)
                         .font(.headline)
