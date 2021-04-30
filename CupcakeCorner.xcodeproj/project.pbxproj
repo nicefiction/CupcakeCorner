@@ -12,6 +12,7 @@
 		091CD2FF263B071E00CA27D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091CD2FE263B071E00CA27D6 /* Assets.xcassets */; };
 		091CD302263B071E00CA27D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091CD301263B071E00CA27D6 /* Preview Assets.xcassets */; };
 		091CD30C263B07F500CA27D6 /* AddingCodableConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CD30B263B07F500CA27D6 /* AddingCodableConformance.swift */; };
+		091CD310263BCDD800CA27D6 /* URLSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CD30F263BCDD700CA27D6 /* URLSessionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		091CD301263B071E00CA27D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		091CD303263B071E00CA27D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		091CD30B263B07F500CA27D6 /* AddingCodableConformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingCodableConformance.swift; sourceTree = "<group>"; };
+		091CD30F263BCDD700CA27D6 /* URLSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				091CD30B263B07F500CA27D6 /* AddingCodableConformance.swift */,
+				091CD30F263BCDD700CA27D6 /* URLSessionView.swift */,
 			);
 			path = Day49;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				091CD2FD263B071900CA27D6 /* ContentView.swift in Sources */,
+				091CD310263BCDD800CA27D6 /* URLSessionView.swift in Sources */,
 				091CD30C263B07F500CA27D6 /* AddingCodableConformance.swift in Sources */,
 				091CD2FB263B071900CA27D6 /* CupcakeCornerApp.swift in Sources */,
 			);

@@ -2,6 +2,8 @@
 /**
  SOURCE :
  https://www.hackingwithswift.com/books/ios-swiftui/adding-codable-conformance-for-published-properties
+ APPLE :
+ https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types
  
  If all the properties of a type already conform to `Codable`,
  then the type itself can conform to `Codable` with no extra work
@@ -12,6 +14,11 @@
  This will fix the `@Published` encoding problem ,
  but is also a valuable skill to have elsewhere too
  because it lets us control exactly what data is saved and how it happens .
+ ( ... )
+ We need to make the type conform ourselves  :
+ we need to tell Swift
+ which properties — `STEP 1`— should be loaded —`STEP 2`— and saved — `STEP  3`— ,
+ and how to do both of those actions — `STEP 2 / STEP 3`.
  */
 
 import SwiftUI
@@ -37,7 +44,8 @@ final class User: ObservableObject ,
     }
     
     /**
-     `STEP 2 of 3` : Create a custom initializer that will be given some sort of container ,
+     `STEP 2 of 3` : Create a custom initializer
+     that will be given some sort of `container` ,
      and use that to read values for all our properties .
      */
     /**
@@ -55,25 +63,29 @@ final class User: ObservableObject ,
     init(from decoder: Decoder)
     throws {
         
-        /**
-         This means
-         “this data should have a container
-         where the keys match
-         whatever cases we have in our CodingKeys enum :
-         */
         let container = try decoder.container(keyedBy : CodingKeys.self)
         /**
+         This means
+         _this data should have a container_
+         _where the keys match_
+         _whatever cases we have in our CodingKeys enum_ :
+         */
+        /**
          Finally , we can read values directly from that container
-         by referencing cases in our enum .
+         by referencing cases in our enum :
+         */
+        name = try container.decode(String.self ,
+                                    forKey : .name)
+        /**
+         NOTE :
          This provides really strong safety in two ways :
          1. we are making it clear we expect to read a string ,
          so if `name` gets changed to an integer
          the code will stop compiling ;
-         and 2. we are also using a `case` in our `CodingKeys enum` rather than a `String`,
-         so there is no chance of typos :
+         and 2. we are also using a `case` in our `CodingKeys enum`
+         rather than a `String`,
+         so there is no chance of typos —`.name`.
          */
-        name = try container.decode(String.self ,
-                                    forKey : .name)
     }
     
     /**
@@ -94,13 +106,19 @@ final class User: ObservableObject ,
         var container = encoder.container(keyedBy : CodingKeys.self)
         try container.encode(name ,
                              forKey : .name)
+        /**
+         `NOTE` OLIVIER :
+         Here `try` is used without the expected do catch block ?
+         CODING WITH CHRIS : You can still call a method that throws without using the do-try-catch syntax .
+         https://codewithchris.com/swift-try-catch/
+         */
     }
     
     /**
      And now our code compiles :
-     Swift knows what data we want to write ,
-     knows how to convert some encoded data into our object’s properties ,
-     and knows how to convert our object’s properties into some encoded data .
+     Swift knows what data we want to write — `STEP 1` ,
+     knows how to convert some encoded data into our object’s properties —`STEP 2` ,
+     and knows how to convert our object’s properties into some encoded data —`STEP 3` .
      */
 }
 
