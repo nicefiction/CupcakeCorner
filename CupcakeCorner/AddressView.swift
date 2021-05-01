@@ -18,7 +18,26 @@ struct AddressView: View {
     
     var body: some View {
         
-        Text("Hello, World!")
+        Form {
+            Section(header : Text("address")) {
+                TextField("Name :" ,
+                          text: $order.name)
+                TextField("Street name and house number :" ,
+                          text : $order.streetAddress)
+                TextField("City :" ,
+                          text : $order.city)
+                TextField("ZIP code :" ,
+                          text : $order.zipCode)
+            }
+            Section {
+                NavigationLink(destination : CheckoutView(order : order)) {
+                    Text("Check out")
+                }
+            }
+            .disabled(order.hasValidAddress)
+        }
+        .navigationBarTitle("Delivery Details" ,
+                            displayMode : .inline)
     }
 }
 

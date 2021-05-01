@@ -16,6 +16,7 @@
 		091CD30C263B07F500CA27D6 /* AddingCodableConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CD30B263B07F500CA27D6 /* AddingCodableConformance.swift */; };
 		091CD310263BCDD800CA27D6 /* URLSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CD30F263BCDD700CA27D6 /* URLSessionView.swift */; };
 		091CD316263BE1CB00CA27D6 /* DisablingForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CD315263BE1CB00CA27D6 /* DisablingForms.swift */; };
+		09898D85263D4B7200707201 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09898D84263D4B7200707201 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		091CD30B263B07F500CA27D6 /* AddingCodableConformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingCodableConformance.swift; sourceTree = "<group>"; };
 		091CD30F263BCDD700CA27D6 /* URLSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionView.swift; sourceTree = "<group>"; };
 		091CD315263BE1CB00CA27D6 /* DisablingForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisablingForms.swift; sourceTree = "<group>"; };
+		09898D84263D4B7200707201 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				0905D556263D1F1E00F126AE /* Order.swift */,
 				091CD2FC263B071900CA27D6 /* ContentView.swift */,
 				0905D55B263D2E1700F126AE /* AddressView.swift */,
+				09898D84263D4B7200707201 /* CheckoutView.swift */,
 				091CD2FE263B071E00CA27D6 /* Assets.xcassets */,
 				091CD303263B071E00CA27D6 /* Info.plist */,
 				091CD300263B071E00CA27D6 /* Preview Content */,
@@ -167,6 +170,7 @@
 				091CD310263BCDD800CA27D6 /* URLSessionView.swift in Sources */,
 				091CD30C263B07F500CA27D6 /* AddingCodableConformance.swift in Sources */,
 				091CD316263BE1CB00CA27D6 /* DisablingForms.swift in Sources */,
+				09898D85263D4B7200707201 /* CheckoutView.swift in Sources */,
 				091CD2FB263B071900CA27D6 /* CupcakeCornerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
