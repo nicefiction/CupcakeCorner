@@ -13,6 +13,9 @@ class Order: ObservableObject {
         "Apple Cinnamon" , "Chocolate" , "Vanilla" , "Pear Gember"
     ]
     
+    var basePrice: Double = 2.00
+    
+    
     
     
      // ////////////////////////
@@ -49,12 +52,26 @@ class Order: ObservableObject {
     var hasValidAddress: Bool {
         
         if name.isEmpty
-            && streetAddress.isEmpty
-            && zipCode.isEmpty {
+            || streetAddress.isEmpty
+            || zipCode.isEmpty {
             return false
             
         } else {
             return true
         }
+    }
+    
+    
+    var totalCost: Double {
+
+        var calculatedCost = Double(self.quantity) * basePrice
+        // special cakes cost more :
+        calculatedCost += (Double(cakeTypeIndex) / 2)
+        // + $ 1 per cake for extra frosting :
+        calculatedCost += (hasExtraFrosting ? Double(quantity) : 0)
+        // + $ 0.50 per cake for sprinkles :
+        calculatedCost += (hasSprinkles ? (Double(quantity) / 2) : 0)
+        
+        return calculatedCost
     }
 }

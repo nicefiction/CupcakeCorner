@@ -37,18 +37,18 @@ struct ContentView: View {
                 Section(header : Text("extras")) {
                     Toggle(isOn : $order.isShowingCakeToppings ,
                            label : {
-                        Text("Show Cake toppings .")
-                    })
+                            Text("Show Cake toppings .")
+                           })
                     
                     if order.isShowingCakeToppings {
                         Toggle(isOn : $order.hasExtraFrosting ,
                                label : {
-                            Text("Frosting")
-                        })
+                                Text("Frosting")
+                               })
                         Toggle(isOn : $order.hasSprinkles ,
                                label : {
-                            Text("Sprinkles")
-                        })
+                                Text("Sprinkles")
+                               })
                     }
                 }
                 Section(header : Text("delivery details")) {
