@@ -7,7 +7,8 @@
  
  If all the properties of a type already conform to `Codable`,
  then the type itself can conform to `Codable` with no extra work
- – Swift will synthesize the code required to archive and unarchive your type as needed . However , this doesn’t work when we use property wrappers
+ – Swift will synthesize the code required to archive and unarchive your type as needed .
+ However , this doesn’t work when we use property wrappers
  such as `@Published` ,
  which means conforming to `Codable` requires some extra work on our behalf .
  To fix this , we need to implement `Codable` conformance ourself .
