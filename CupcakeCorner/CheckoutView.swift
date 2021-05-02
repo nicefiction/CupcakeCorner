@@ -25,6 +25,7 @@ struct CheckoutView: View {
     //  MARK: PROPERTY OBSERVERS
     
     @ObservedObject var order: Order
+    @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
     @State private var isShowingAlert: Bool = false
     
@@ -57,7 +58,7 @@ struct CheckoutView: View {
             .navigationBarTitle(Text("Checkout") ,
                                 displayMode : .inline)
             .alert(isPresented : $isShowingAlert) {
-                Alert(title : Text("Thank you !") ,
+                Alert(title : Text(alertTitle) ,
                       message : Text(alertMessage) ,
                       dismissButton : Alert.Button.default(Text("OK")))
             }
@@ -165,7 +166,9 @@ struct CheckoutView: View {
             guard
                 let _data = data
             else {
-                print("No data in response : \(error?.localizedDescription ?? "Unknown Error") .")
+                alertTitle = "☹️"
+                alertMessage = "No data in response : \(error?.localizedDescription ?? "Unknown Error")"
+                isShowingAlert = true
                 return
             }
             /**
@@ -180,6 +183,7 @@ struct CheckoutView: View {
             if
                 let _decodedOrder = try? JSONDecoder().decode(Order.self ,
                                                               from : _data) {
+                alertTitle = "🤗"
                 alertMessage = "Your order for \(_decodedOrder.quantity) \(Order.cakeTypes[_decodedOrder.cakeTypeIndex]) cupcakes is on its way ."
                 isShowingAlert = true
                 
