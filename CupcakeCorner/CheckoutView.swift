@@ -118,6 +118,11 @@ struct CheckoutView: View {
          – there are no string interpolations in there that might cause problems .
          */
         var urlRequest = URLRequest(url : urlCupcakes) // A
+        /**
+         `NOTE`:
+         URLRequest doesn't fetch anything ;
+         it describes _how_ data should be fetched .
+         */
         
         /**
          `B.1` The _content type_ of a request

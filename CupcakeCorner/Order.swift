@@ -87,9 +87,9 @@ final class Order: ObservableObject ,
     
     var hasValidAddress: Bool {
         
-        if name.isEmpty
-            || streetAddress.isEmpty
-            || zipCode.isEmpty {
+        if name.trimmingCharacters(in : CharacterSet.whitespaces).isEmpty
+            || streetAddress.trimmingCharacters(in : CharacterSet.whitespaces).isEmpty
+            || zipCode.trimmingCharacters(in : CharacterSet.whitespaces).isEmpty {
             return false
             
         } else {
