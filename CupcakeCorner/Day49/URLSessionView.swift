@@ -2,7 +2,7 @@
 /**
  SOURCE :
  https://www.hackingwithswift.com/books/ios-swiftui/sending-and-receiving-codable-data-with-urlsession-and-swiftui
- 
+ ⭐️
  iOS gives us built-in tools for sending and receiving data from the internet ,
  and if we combine it with Codable support
  then it is possible to convert Swift objects to JSON for sending ,
@@ -71,8 +71,10 @@ struct URLSessionView: View {
             }
         }
         /**
-         `STEP 2`
-         We want that to be run as soon as our List is shown :
+         ⭐️
+         Sending and Receiving Codable data ,
+         STEP 2 of 6 :
+         We want that to be run as soon as our List is shown .
          */
         .onAppear(perform : loadData)
     }
@@ -83,11 +85,15 @@ struct URLSessionView: View {
     //  MARK: METHODS
     
     /**
-     `STEP 1`
+     ⭐️
+     Sending and Receiving Codable data ,
+     STEP 1 of 6 :
      */
     func loadData() {
         /**
-         `STEP 3`
+         ⭐️
+         Sending and Receiving Codable data ,
+         STEP 3 of 6 :
          Creating the `URL` we want to read :
          */
         guard
@@ -97,7 +103,9 @@ struct URLSessionView: View {
             return
         }
         /**
-         `STEP 4`
+         ⭐️
+         Sending and Receiving Codable data ,
+         STEP 4 of 6 :
          Wrapping that in a `URLRequest` ,
          which allows us to configure _how_ the `URL` should be accessed :
          */
@@ -110,7 +118,9 @@ struct URLSessionView: View {
          so this is just a single line of code .
          */
         /**
-         `STEP 5`
+         ⭐️
+         Sending and Receiving Codable data ,
+         STEP 5 of 6 :
          Create and start a networking task from that URL request .
          `5.1` `URLSession` is the iOS class responsible for managing network requests .
          `5.2`  You can make your own session if you want to ,
@@ -136,7 +146,8 @@ struct URLSessionView: View {
          */
         URLSession.shared.dataTask(with : request) { data , response , error in
             /**
-             `STEP 6`
+             ⭐️
+             STEP 6 of 6
              Handle the result of that networking task .
              */
             if let _data = data {

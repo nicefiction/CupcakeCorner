@@ -2,6 +2,7 @@
 /**
  SOURCE :
  https://www.hackingwithswift.com/books/ios-swiftui/encoding-an-observableobject-class
+ ⭐️ 
  That makes our code fully Codable compliant :
  we’ve effectively bypassed the `@Published` property wrapper ,
  reading and writing the values directly .
@@ -11,7 +12,9 @@ import Foundation
 
 
 /**
- Encoding an observableobject : STEP 4 of 5
+ ⭐️
+ Encoding an observableobject ,
+ STEP 4 of 5 :
  Make the class `final`in order to avoid the `required`keyword .
  */
 // class Order: ObservableObject
@@ -21,7 +24,9 @@ final class Order: ObservableObject ,
      // ///////////////////
     //  MARK: NESTED TYPES
     /**
-     Encoding an observableobject : STEP 1 of 4
+     ⭐️
+     Encoding an observableobject ,
+     STEP 1 of 5 :
      */
     enum CodingKeys: CodingKey {
         
@@ -111,7 +116,9 @@ final class Order: ObservableObject ,
      // //////////////////////////
     //  MARK: INITIALIZER METHODS
     /**
-     Encoding an observableobject : STEP 3 of 5
+     ⭐️
+     Encoding an observableobject ,
+     STEP 3 of 5 :
      */
     // required init(from decoder: Decoder)
     init(from decoder: Decoder)
@@ -152,7 +159,9 @@ final class Order: ObservableObject ,
      the default property values we assigned :
      */
     /**
-     Encoding an observableobject : STEP 5 of 5
+     ⭐️
+     Encoding an observableobject ,
+     STEP 5 of 5 :
      */
     init() {}
 
@@ -161,7 +170,9 @@ final class Order: ObservableObject ,
      // //////////////
     //  MARK: METHODS
     /**
-     Encoding an observableobject : STEP 2 of 5
+     ⭐️
+     Encoding an observableobject ,
+     STEP 2 of 5 :
      */
     func encode(to encoder: Encoder)
     throws {
