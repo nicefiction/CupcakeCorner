@@ -108,10 +108,18 @@ final class User: ObservableObject ,
         try container.encode(name ,
                              forKey : .name)
         /**
-         `NOTE` OLIVIER :
+         `OLIVIER` :
          Here `try` is used without the expected do catch block ?
-         CODING WITH CHRIS : You can still call a method that throws without using the do-try-catch syntax .
+         
+         `CODING WITH CHRIS` : You can still call a method that throws without using the do-try-catch syntax .
          https://codewithchris.com/swift-try-catch/
+         
+         `PAUL HUDSON DAY 51` :
+         Because that method is marked with `throws` ,
+         we don’t need to worry about catching any of the errors that are thrown inside
+         – we can just use `try` without adding `catch` ,
+         knowing that any problems will automatically propagate upwards
+         and be handled elsewhere .
          */
     }
     
